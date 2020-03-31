@@ -1,2 +1,11 @@
 <h1>Library Welcome Page</h1>
-<p>This page is currently under construction.</p>
+
+<p>
+    <% if current_user %>
+        Logged in as <%= current_user.name %>
+        <%= link_to "Log Out", logout_path %>
+    <% else %>
+        <%= link_to "Sign up", signup_path %> or 
+        <%= link_to "Log In", login_path %>
+    <% end
+</p>
